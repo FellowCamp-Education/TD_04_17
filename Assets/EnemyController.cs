@@ -11,6 +11,10 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        if (!LevelEnd)
+        {
+            LevelEnd = GameObject.FindGameObjectWithTag("LevelEnd").transform;
+        }
         agent.destination = LevelEnd.position;
     }
 
